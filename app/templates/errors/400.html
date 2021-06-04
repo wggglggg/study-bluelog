@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}400 error-Bad Request{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>400 error</h2>
+</div>
+<div class="row">
+    <div class="col-sm-4 sidebar">
+        {% include 'blog/_sidebar.html' %}
+    </div>
+    <div class="col-sm-8">
+        <p>{{ description | default('Bad Request') }}</p> {# description接受csrf错误, 没有信息就用default信息 #}
+    </div>
+</div>
+{% endblock %}
